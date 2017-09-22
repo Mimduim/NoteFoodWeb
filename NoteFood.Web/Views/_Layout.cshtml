@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>_Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="~/Assets/global.css" rel="stylesheet" />
+</head>
+<body>
+    <nav id="menu">
+        <ul>
+            <li>
+                <!-- HTML PURO -->
+                <a href="/Home">HOME</a>                
+            </li>
+            <li>
+                <!-- ACTION LINK -->
+                @Html.ActionLink("ALIMENTOS", "Index", "Alimentos")
+            </li>
+        </ul>
+    </nav>
+    <div id="conteudo">
+        @RenderBody()
+    </div>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="~/Assets/Scripts/Alimento.js"></script>
+</body>
+</html>

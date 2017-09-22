@@ -1,0 +1,23 @@
+﻿@using NoteFood.Web.Models.Dominio
+@model List<Alimento>
+@{
+    Layout = "~/Views/_Layout.cshtml";
+}
+<div>
+    @foreach (Alimento objAlimento in Model)
+    {
+        <div class="alimento">
+            <img src="~/Assets/Imagens/Alimentos/@(objAlimento.Id).jpg" />
+            <div>
+                Nome:@objAlimento.Nome
+            </div>
+            <div>
+                Descrição: @objAlimento.Descricao
+            </div>
+            <div>
+                <input type="number" class="qtd" data-alimento-id="@objAlimento.Id" />
+                <button type="button" class="btnAddQtd" onclick="registrarQtdAlimentos(@objAlimento.Id, this)">Adicionar</button>
+            </div>
+        </div>
+    }
+</div>
